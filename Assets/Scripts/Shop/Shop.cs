@@ -6,6 +6,7 @@ namespace ShopSystem
 {
     public class Shop : Container
     {
+        public GameObject itemPrefab;
         public List<ItemScriptable> ShopItemsScriptable = new List<ItemScriptable>();
 
 
@@ -23,23 +24,18 @@ namespace ShopSystem
         {
             foreach (var item in ShopItemsScriptable)
             {
-                // Create a new item instance GO
-                GameObject itemInstance = new("Item_" + item.itemName);
-                // Set the parent of the item instance to the items container
-                itemInstance.transform.SetParent(itemsContainer);
-                // Add the Image component to the item instance
-                Image img = itemInstance.AddComponent<Image>();
-                // Set the sprite of the item instance to the item sprite
-                img.sprite = item.itemSpriteUI;
-                // Add Button component to the item instance
-                Button btn = itemInstance.AddComponent<Button>();
-                btn.targetGraphic = img;
+                // Create a new item instance GO and set its parent to the itemsContainer
+                GameObject itemInstance = Instantiate(itemPrefab, itemsContainer);
                 // Add the Item component to the item instance
-                Item itemComponent = itemInstance.AddComponent<Item>();
+                Item itemComponent = itemInstance.GetComponent<Item>();
                 // Set the itemScriptable of the item instance to the item
                 itemComponent.itemScriptable = item;
                 // Set the itemState of the item instance to InShop
                 itemComponent.itemState = ItemState.InShop;
+                itemComponent.img.sprite = item.itemSpriteUI;
+                itemComponent.itemName.text = item.itemName;
+                itemComponent.price = item.price;
+                itemComponent.price_txt.text = itemComponent.price.ToString();
 
                 Items.Add(itemComponent);
             }

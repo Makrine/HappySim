@@ -6,13 +6,20 @@ namespace ShopSystem
     public class Item : MonoBehaviour
     {
         public ItemScriptable itemScriptable;
+        public Image img;
+        public Button btn;
+        public TMPro.TMP_Text itemName;
+        public TMPro.TMP_Text price_txt;
+        [HideInInspector]
+        public int price;
+
         public ItemState itemState; // The state of the item
 
         // Reference to the shop
         private Shop shop;
         private Cart cart;
         private Inventory inventory;
-        private Button btn;
+        private PlayerInvenotry playerInvenotry;
 
         private void Awake()
         {
@@ -20,8 +27,8 @@ namespace ShopSystem
             shop = FindObjectOfType<Shop>();
             cart = FindObjectOfType<Cart>();
             inventory = FindObjectOfType<Inventory>();
-            // Get the button component
-            btn = GetComponent<Button>();
+            playerInvenotry = FindObjectOfType<PlayerInvenotry>();
+
             // Add a listener to the button click event
             btn.onClick.AddListener(HandleItemClick);
         }
@@ -51,6 +58,7 @@ namespace ShopSystem
                 // Remove item from inventory
                 shop.AddItem(this, ItemState.InShop);
                 inventory.RemoveItem(this);
+                playerInvenotry.AddMoney(price);
             }
             
         }
