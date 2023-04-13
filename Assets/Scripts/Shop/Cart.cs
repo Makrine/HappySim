@@ -10,20 +10,22 @@ namespace ShopSystem
 
 
         private Shop shop;
+        private Inventory inventory;
 
         private void Awake()
         {
             shop = FindObjectOfType<Shop>();
+            inventory = FindObjectOfType<Inventory>();
         }
         /// <summary>
         /// Add an <see cref="Item"/> to the cart.
         /// </summary>
-        public void AddItem(Item item)
+        public void AddItem(Item item, ItemState itemState)
         {
             if(item != null)
             {
                 cartItems.Add(item);
-                item.itemState = ItemState.InCart;
+                item.itemState = itemState;
                 item.transform.SetParent(itemsContainer);
                 Debug.Log(item.itemScriptable.itemName + " added to cart");
             }
@@ -45,6 +47,16 @@ namespace ShopSystem
                 
             else
                 Debug.LogError("Item is null and cannot be removed from the cart");
+        }
+
+
+        public void BuyAllItems()
+        {
+            foreach (var item in cartItems)
+            {
+                inventory.AddItem(item, ItemState.InInventory);
+            }
+            cartItems.Clear();
         }
 
 

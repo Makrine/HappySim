@@ -11,12 +11,12 @@ namespace ShopSystem
         /// <summary>
         /// Add an <see cref="Item"/> to the inventory.
         /// </summary>
-        public void AddItem(Item item)
+        public void AddItem(Item item, ItemState itemState)
         {
             if(item != null)
             {
                 inventoryItems.Add(item);
-                item.itemState = ItemState.InInventory;
+                item.itemState = itemState;
                 item.transform.SetParent(itemsContainer);
                 Debug.Log(item.itemScriptable.itemName + " added to the inventory");
             }

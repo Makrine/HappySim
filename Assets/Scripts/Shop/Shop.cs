@@ -20,12 +20,12 @@ namespace ShopSystem
         /// <summary>
         /// Add an <see cref="Item"/> to the shop.
         /// </summary>
-        public void AddItem(Item item)
+        public void AddItem(Item item, ItemState itemState)
         {
             if(item != null)
             {
                 ShopItems.Add(item);
-                item.itemState = ItemState.InShop;
+                item.itemState = itemState;
                 item.transform.SetParent(itemsContainer);
                 Debug.Log(item.itemScriptable.itemName + " sold to the shop");
             }

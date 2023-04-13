@@ -37,20 +37,19 @@ namespace ShopSystem
             if(itemState == ItemState.InShop)
             {
                 // Add item to cart
-                cart.AddItem(this);
+                cart.AddItem(this, ItemState.InCart);
                 shop.RemoveItem(this);
             }
             else if(itemState == ItemState.InCart)
             {
-                inventory.AddItem(this);
+                shop.AddItem(this, ItemState.InShop);
                 // Remove item from cart
                 cart.RemoveItem(this);
-                //shop.AddItem(this);
             }
             else if(itemState == ItemState.InInventory)
             {
                 // Remove item from inventory
-                shop.AddItem(this);
+                shop.AddItem(this, ItemState.InShop);
                 inventory.RemoveItem(this);
                 Debug.Log(itemScriptable.itemName + " sold");
             }
