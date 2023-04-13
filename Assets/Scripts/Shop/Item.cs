@@ -18,10 +18,31 @@ namespace ShopSystem
         // References
         public ShopKeeper shopKeeper;
 
-        private void Awake()
+        private void Start()
         {
             // Add a listener to the button click event
             btn.onClick.AddListener(HandleItemClick);
+            // Add listeners to the onShopOpen and onShopClose events
+            // using this, we will only be able to sell item when the shop that is open is the shop
+            // that this item belongs to
+            shopKeeper.onShopOpen += OnShopOpen;
+            shopKeeper.onShopClose += OnShopClose;
+        }
+
+        /// <summary>
+        /// Enable the button when the shop is open
+        /// </summary>
+        private void OnShopOpen(object sender, System.EventArgs e)
+        {
+            btn.interactable = true;
+        }
+        
+        /// <summary>
+        /// Disable the button when the shop is closed
+        /// </summary>
+        private void OnShopClose(object sender, System.EventArgs e)
+        {
+            btn.interactable = false;
         }
 
         /// <summary>

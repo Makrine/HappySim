@@ -18,6 +18,8 @@ namespace ShopSystem
          public void OpenInventory(bool flag)
          {
               inventoryUI.alpha = flag ? 1 : 0;
+              inventoryUI.interactable = flag;
+              inventoryUI.blocksRaycasts = flag;
          }
     }
 }

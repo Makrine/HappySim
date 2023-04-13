@@ -25,6 +25,8 @@ namespace ShopSystem
         public void OpenShop(bool flag)
         {
             shopUI.alpha = flag ? 1 : 0;
+            shopUI.interactable = flag;
+            shopUI.blocksRaycasts = flag;
         }
 
         /// <summary>
@@ -39,6 +41,8 @@ namespace ShopSystem
                 GameObject itemInstance = Instantiate(itemPrefab, itemsContainer);
                 // Add the Item component to the item instance
                 Item itemComponent = itemInstance.GetComponent<Item>();
+                // assign the shopkeeper of this shop to the item
+                itemComponent.shopKeeper = shopKeeper;
                 // Set the itemScriptable of the item instance to the item
                 itemComponent.itemScriptable = item;
                 // Set the itemState of the item instance to InShop
@@ -47,8 +51,7 @@ namespace ShopSystem
                 itemComponent.itemName.text = item.itemName;
                 itemComponent.price = item.price;
                 itemComponent.price_txt.text = itemComponent.price.ToString();
-                // assign the shopkeeper of this shop to the item
-                itemComponent.shopKeeper = shopKeeper;
+                
 
                 Items.Add(itemComponent);
             }
