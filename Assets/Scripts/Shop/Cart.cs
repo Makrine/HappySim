@@ -4,11 +4,9 @@ namespace ShopSystem
     {
 
         private Shop shop;
-        private Inventory inventory;
 
         private void Awake()
         {
-            inventory = FindObjectOfType<Inventory>();
             shop = FindObjectOfType<Shop>();
         }
         /// <summary>
@@ -19,15 +17,6 @@ namespace ShopSystem
            base.AddItem(item);
            if(item != null)
             item.itemState = ItemState.InCart;
-        }
-
-        public void BuyAllItems()
-        {
-            foreach (var item in Items)
-            {
-                inventory.AddItem(item);
-            }
-            Items.Clear();
         }
 
     }
