@@ -4,47 +4,15 @@ using UnityEngine.UI;
 
 namespace ShopSystem
 {
-    public class Shop : MonoBehaviour
+    public class Shop : Container
     {
-        public Transform itemsContainer; // parent of the items
         public List<ItemScriptable> ShopItemsScriptable = new List<ItemScriptable>();
-        
-        public List<Item> ShopItems = new List<Item>();
+
 
         private void Awake() 
         {
             // Populate the shop with items
             PopulateShop();
-        }
-
-        /// <summary>
-        /// Add an <see cref="Item"/> to the shop.
-        /// </summary>
-        public void AddItem(Item item, ItemState itemState)
-        {
-            if(item != null)
-            {
-                ShopItems.Add(item);
-                item.itemState = itemState;
-                item.transform.SetParent(itemsContainer);
-                Debug.Log(item.itemScriptable.itemName + " sold to the shop");
-            }
-            else
-                Debug.LogError("Item is null and cannot be sold to the shop");
-        }
-
-        /// <summary>
-        /// Remove an <see cref="Item"/> from the shop.
-        /// </summary>
-        public void RemoveItem(Item item)
-        {
-            if(item != null)
-            { 
-                ShopItems.Remove(item);
-                Debug.Log(item.itemScriptable.itemName + " removed from shop");
-            }
-            else
-                Debug.LogError("Item is null and cannot be removed from the shop");
         }
 
         /// <summary>
@@ -73,7 +41,7 @@ namespace ShopSystem
                 // Set the itemState of the item instance to InShop
                 itemComponent.itemState = ItemState.InShop;
 
-                ShopItems.Add(itemComponent);
+                Items.Add(itemComponent);
             }
         }
         
