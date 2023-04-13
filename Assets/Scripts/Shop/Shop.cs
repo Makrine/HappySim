@@ -1,19 +1,30 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace ShopSystem
 {
     public class Shop : Container
     {
+        public CanvasGroup shopUI;
         public GameObject itemPrefab;
         public List<ItemScriptable> ShopItemsScriptable = new List<ItemScriptable>();
 
+        public ShopKeeper shopKeeper;
 
         private void Awake() 
         {
+            shopUI = GetComponent<CanvasGroup>();
             // Populate the shop with items
             PopulateShop();
+        }
+
+
+        /// <summary>
+        /// Open or close the shop UI
+        /// </summary>
+        public void OpenShop(bool flag)
+        {
+            shopUI.alpha = flag ? 1 : 0;
         }
 
         /// <summary>
@@ -36,6 +47,8 @@ namespace ShopSystem
                 itemComponent.itemName.text = item.itemName;
                 itemComponent.price = item.price;
                 itemComponent.price_txt.text = itemComponent.price.ToString();
+                // assign the shopkeeper of this shop to the item
+                itemComponent.shopKeeper = shopKeeper;
 
                 Items.Add(itemComponent);
             }

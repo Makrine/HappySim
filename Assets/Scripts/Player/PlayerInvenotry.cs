@@ -1,10 +1,10 @@
 using UnityEngine;
+using ShopSystem;
 
-public class PlayerInvenotry : MonoBehaviour
+public class PlayerInvenotry : Container
 {
     public int money = 100;
-
-
+    
     /// <summary>
     /// Adds money to the player
     /// </summary>

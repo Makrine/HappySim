@@ -6,14 +6,11 @@ namespace ShopSystem
     {
         public TMPro.TMP_Text total_price_txt;
         public int total_price;
-        private Inventory inventory;
-        private PlayerInvenotry playerInvenotry;
+
+        public ShopKeeper shopKeeper;
 
         private void Awake()
         {
-            inventory = FindObjectOfType<Inventory>();
-            playerInvenotry = FindObjectOfType<PlayerInvenotry>();
-
             // Set the total price to 0 at the start
             total_price_txt.text = total_price.ToString();
             // Add listeners to the onItemAdded event and onItemRemoved event
@@ -40,11 +37,11 @@ namespace ShopSystem
         // called from a button
         public void BuyAllItems()
         {
-            if(playerInvenotry.RemoveMoney(total_price))
+            if(shopKeeper.playerInventory.RemoveMoney(total_price))
             {
                 foreach (var item in Items)
                 {
-                    inventory.AddItem(item, ItemState.InInventory);
+                    shopKeeper.playerInventory.AddItem(item, ItemState.InInventory);
                     onItemRemoved?.Invoke(this, new ItemAddedEventArgs(item, false));
                 }
                 Items.Clear();
