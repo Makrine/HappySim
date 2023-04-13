@@ -8,9 +8,6 @@ namespace ShopSystem
     {
         public Transform itemsContainer; // parent of the items
         public List<ItemScriptable> ShopItems = new List<ItemScriptable>();
-
-        // Reference to the cart
-        public Cart cart;
         
         private void Awake() 
         {
@@ -27,6 +24,7 @@ namespace ShopSystem
             {
                 ShopItems.Add(item.itemScriptable);
                 item.itemState = ItemState.InShop;
+                item.transform.SetParent(itemsContainer);
                 Debug.Log(item.itemScriptable.itemName + " sold to the shop");
             }
             else
@@ -38,8 +36,9 @@ namespace ShopSystem
         /// </summary>
         public void RemoveItem(Item item)
         {
-            if(item != null && ShopItems.Remove(item.itemScriptable))
+            if(item != null)
             { 
+                ShopItems.Remove(item.itemScriptable);
                 Debug.Log(item.itemScriptable.itemName + " removed from shop");
             }
             else

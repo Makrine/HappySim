@@ -6,7 +6,15 @@ namespace ShopSystem
     public class Cart : MonoBehaviour
     {
         public List<Item> cartItems = new List<Item>();
+        public Transform itemsContainer; // parent of the items
 
+
+        private Shop shop;
+
+        private void Awake()
+        {
+            shop = FindObjectOfType<Shop>();
+        }
         /// <summary>
         /// Add an <see cref="Item"/> to the cart.
         /// </summary>
@@ -16,6 +24,7 @@ namespace ShopSystem
             {
                 cartItems.Add(item);
                 item.itemState = ItemState.InCart;
+                item.transform.SetParent(itemsContainer);
                 Debug.Log(item.itemScriptable.itemName + " added to cart");
             }
                 
@@ -28,8 +37,9 @@ namespace ShopSystem
         /// </summary>
         public void RemoveItem(Item item)
         {
-            if(item != null && cartItems.Remove(item))
+            if(item != null)
             { 
+                cartItems.Remove(item);
                 Debug.Log(item.itemScriptable.itemName + " removed from cart");
             }
                 
