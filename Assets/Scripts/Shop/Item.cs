@@ -42,10 +42,8 @@ namespace ShopSystem
             }
             else if(itemState == ItemState.InCart)
             {
-                inventory.AddItem(this);
+                shop.AddItem(this);
                 // Remove item from cart
-                cart.RemoveItem(this);
-                //shop.AddItem(this);
             }
             else if(itemState == ItemState.InInventory)
             {
