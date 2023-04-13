@@ -51,6 +51,7 @@ namespace ShopSystem
             {
                 // Remove item from inventory
                 shop.AddItem(this);
+                inventory.RemoveItem(this);
                 Debug.Log(itemScriptable.itemName + " sold");
             }
             

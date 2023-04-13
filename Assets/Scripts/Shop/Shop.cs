@@ -7,8 +7,10 @@ namespace ShopSystem
     public class Shop : MonoBehaviour
     {
         public Transform itemsContainer; // parent of the items
-        public List<ItemScriptable> ShopItems = new List<ItemScriptable>();
+        public List<ItemScriptable> ShopItemsScriptable = new List<ItemScriptable>();
         
+        public List<Item> ShopItems = new List<Item>();
+
         private void Awake() 
         {
             // Populate the shop with items
@@ -22,7 +24,7 @@ namespace ShopSystem
         {
             if(item != null)
             {
-                ShopItems.Add(item.itemScriptable);
+                ShopItems.Add(item);
                 item.itemState = ItemState.InShop;
                 item.transform.SetParent(itemsContainer);
                 Debug.Log(item.itemScriptable.itemName + " sold to the shop");
@@ -38,7 +40,7 @@ namespace ShopSystem
         {
             if(item != null)
             { 
-                ShopItems.Remove(item.itemScriptable);
+                ShopItems.Remove(item);
                 Debug.Log(item.itemScriptable.itemName + " removed from shop");
             }
             else
@@ -51,7 +53,7 @@ namespace ShopSystem
         /// </summary>
         private void PopulateShop()
         {
-            foreach (var item in ShopItems)
+            foreach (var item in ShopItemsScriptable)
             {
                 // Create a new item instance GO
                 GameObject itemInstance = new("Item_" + item.itemName);
@@ -70,6 +72,8 @@ namespace ShopSystem
                 itemComponent.itemScriptable = item;
                 // Set the itemState of the item instance to InShop
                 itemComponent.itemState = ItemState.InShop;
+
+                ShopItems.Add(itemComponent);
             }
         }
         
