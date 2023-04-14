@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -48,13 +48,15 @@ public class Movement : MonoBehaviour
 
     private void Animations()
     {
-        if (move.x != 0 || move.y != 0)
-        {
-            anim.SetBool("walk", true);
-        }
-        else
-        {
-            anim.SetBool("walk", false);
-        }
+         anim.SetFloat("move", move.magnitude);
+        // if (move.x != 0 || move.y != 0)
+        // {
+        //     anim.SetFloat("x", move.x);
+        //     anim.SetBool("walk", true);
+        // }
+        // else
+        // {
+        //     anim.SetBool("walk", false);
+        // }
     }
 }
