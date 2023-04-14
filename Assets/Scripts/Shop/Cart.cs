@@ -7,6 +7,7 @@ namespace ShopSystem
         public TMPro.TMP_Text total_price_txt;
         public int total_price;
 
+        [HideInInspector]
         public ShopKeeper shopKeeper;
 
         private void Awake()

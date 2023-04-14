@@ -9,6 +9,7 @@ namespace ShopSystem
         public GameObject itemPrefab;
         public List<ItemScriptable> ShopItemsScriptable = new List<ItemScriptable>();
 
+        [HideInInspector]
         public ShopKeeper shopKeeper;
 
         private void Awake() 
