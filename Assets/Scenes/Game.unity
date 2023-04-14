@@ -1511,8 +1511,9 @@ MonoBehaviour:
   cart: {fileID: 553260014}
   playerInventory: {fileID: 0}
   messagePopup: {fileID: 2139132128}
-  offsetX: 0
-  offsetY: 150
+  offset: {x: 0, y: 150}
+  noBtn: {fileID: 1462512158}
+  yesBtn: {fileID: 1068282947}
 --- !u!70 &816413325
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
