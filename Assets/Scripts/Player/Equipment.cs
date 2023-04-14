@@ -26,7 +26,7 @@ public class Equipment : Container
                 // Add the Item component to the item instance
                 Item itemComponent = itemInstance.GetComponent<Item>();
                 // assign the shopkeeper of this shop to the item
-                itemComponent.shopKeeper = GameObject.FindGameObjectWithTag(itemComponent.itemScriptable.shopKeeperTag).GetComponent<ShopKeeper>();
+                itemComponent.shopKeeper = GameObject.FindGameObjectWithTag(item.shopKeeperTag).GetComponent<ShopKeeper>();
                 // Set the itemScriptable of the item instance to the item
                 itemComponent.itemScriptable = item;
                 // Set the itemState of the item instance to InShop
