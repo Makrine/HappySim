@@ -13,12 +13,30 @@ public class Movement : MonoBehaviour
 
     private PlayerInputs input;
 
+    public PlayerInvenotry playerInventory;
+
     private void Awake() 
     {
         input = new PlayerInputs();
         input.Player.Enable();
+
+        input.Player.Inventory.performed += OpenInvetory;
     }
 
+    private void OpenInvetory(InputAction.CallbackContext obj)
+    {
+        if(playerInventory.inventory.IsOpen)
+        {
+            playerInventory.inventory.OpenInventory(false);
+            playerInventory.onInvetoryOpen?.Invoke(this, EventArgs.Empty);
+        }
+            
+        else
+        {
+            playerInventory.inventory.OpenInventory(true);
+            playerInventory.onInvetoryClose?.Invoke(this, EventArgs.Empty);
+        }
+    }
 
     private void Start()
     {

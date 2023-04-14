@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8da9418a6bf493e93ef4c7b7575847, type: 3}
+  m_Name: Player Skeleton
+  m_EditorClassIdentifier: 
+  m_SpriteBones:
+  - m_Name: b_body
+    m_Guid: 9154ce347f45ef742928199d855da173
+    m_Position: {x: 317.65054, y: 689.6176, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0.7071069, w: 0.7071067}
+    m_Length: 285.0141
+    m_ParentId: -1
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278190335
+  - m_Name: b_chest
+    m_Guid: 58a9d9892eea319409a732ae8476be40
+    m_Position: {x: 285.0141, y: -0.00004337968, z: 0}
+    m_Rotation: {x: 0, y: 0, z: -0.01629719, w: 0.9998672}
+    m_Length: 267.70654
+    m_ParentId: 0
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278255615
+  - m_Name: b_head
+    m_Guid: 1ffdcefff164e714fa4c1a57d1b8fd02
+    m_Position: {x: 267.7066, y: -0.000021331492, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0.020497518, w: 0.9997899}
+    m_Length: 692.20154
+    m_ParentId: 1
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278255360
+  - m_Name: b_left_upper_arm
+    m_Guid: 76fa51c9b210a0041bafe78f140188b3
+    m_Position: {x: 185.52707, y: -156.90233, z: 0}
+    m_Rotation: {x: 0, y: -0, z: -0.9867626, w: 0.1621716}
+    m_Length: 322.02197
+    m_ParentId: 1
+    m_Color:
+      serializedVersion: 2
+      rgba: 4294967040
+  - m_Name: b_left_lower_arm
+    m_Guid: eb1eafc57efa2a043b37d528c81e45a7
+    m_Position: {x: 322.022, y: 0.00009177798, z: 0}
+    m_Rotation: {x: 0, y: 0, z: -0.1325688, w: 0.9911738}
+    m_Length: 320.0325
+    m_ParentId: 3
+    m_Color:
+      serializedVersion: 2
+      rgba: 4294901760
+  - m_Name: b_right_upper_arm
+    m_Guid: 905e40a779c30dc408e534f93bea31b6
+    m_Position: {x: 183.63196, y: 168.93942, z: 0}
+    m_Rotation: {x: 0, y: -0, z: 0.9975133, w: 0.07047905}
+    m_Length: 336.6107
+    m_ParentId: 1
+    m_Color:
+      serializedVersion: 2
+      rgba: 4294902015
+  - m_Name: b_right_lower_arm
+    m_Guid: 4028e2ec65d869f43a9c03e84a808937
+    m_Position: {x: 336.61063, y: -0.000069148584, z: 0}
+    m_Rotation: {x: 0, y: 0, z: 0.13837542, w: 0.9903799}
+    m_Length: 336.27106
+    m_ParentId: 5
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278223103
+  - m_Name: b_right_upper_leg
+    m_Guid: 8ebacbddca6275049adc8dd57cd29e9c
+    m_Position: {x: 0.00004175256, y: 93.06583, z: 0}
+    m_Rotation: {x: 0, y: -0, z: -0.99887323, w: 0.047457937}
+    m_Length: 306.7539
+    m_ParentId: 0
+    m_Color:
+      serializedVersion: 2
+      rgba: 4278255488
+  - m_Name: b_right_lower_leg
+    m_Guid: ebfbf4c5be1b3b248aa98a0fef76b4dd
+    m_Position: {x: 306.75394, y: -0.000031318745, z: 0}
+    m_Rotation: {x: 0, y: 0, z: -0.09715664, w: 0.9952692}
+    m_Length: 350.7376
+    m_ParentId: 7
+    m_Color:
+      serializedVersion: 2
+      rgba: 4286643968
+  - m_Name: b_left_upper_leg
+    m_Guid: 250bc06e019fcc84c8182a2f15c22b1d
+    m_Position: {x: -2.9083447, y: -78.52429, z: 0}
+    m_Rotation: {x: 0, y: -0, z: -0.99875855, w: 0.049813587}
+    m_Length: 292.281
+    m_ParentId: 0
+    m_Color:
+      serializedVersion: 2
+      rgba: 4294934528
+  - m_Name: b_left_lower_leg
+    m_Guid: 2ca1a1ac9fcc4d24094153e2e9112967
+    m_Position: {x: 292.28094, y: 0.000020099073, z: 0}
+    m_Rotation: {x: 0, y: 0, z: -0.10316422, w: 0.9946644}
+    m_Length: 353.93045
+    m_ParentId: 9
+    m_Color:
+      serializedVersion: 2
+      rgba: 4294901888

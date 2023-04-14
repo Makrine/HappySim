@@ -18,32 +18,15 @@ namespace ShopSystem
         // References
         public ShopKeeper shopKeeper;
 
+        [HideInInspector]
+        public EquiomentChanger equiomentChanger;
+
         private void Start()
         {
             // Add a listener to the button click event
             btn.onClick.AddListener(HandleItemClick);
-            // Add listeners to the onShopOpen and onShopClose events
-            // using this, we will only be able to sell item when the shop that is open is the shop
-            // that this item belongs to
-            shopKeeper.onShopOpen += OnShopOpen;
-            shopKeeper.onShopClose += OnShopClose;
         }
 
-        /// <summary>
-        /// Enable the button when the shop is open
-        /// </summary>
-        private void OnShopOpen(object sender, System.EventArgs e)
-        {
-            btn.interactable = true;
-        }
-        
-        /// <summary>
-        /// Disable the button when the shop is closed
-        /// </summary>
-        private void OnShopClose(object sender, System.EventArgs e)
-        {
-            btn.interactable = false;
-        }
 
         /// <summary>
         /// Handle the click event of the item
@@ -67,10 +50,22 @@ namespace ShopSystem
             }
             else if(itemState == ItemState.InInventory)
             {
-                // Remove item from inventory
-                shopKeeper.shop.AddItem(this, ItemState.InShop);
-                shopKeeper.playerInventory.RemoveItem(this);
-                shopKeeper.playerInventory.AddMoney(price);
+                // only sell item when this item's shop is open
+                // and not when eg inventory is open, or another shop is open
+                if(shopKeeper.shop.IsOpen)
+                {
+                    // Remove item from inventory
+                    shopKeeper.shop.AddItem(this, ItemState.InShop);
+                    shopKeeper.playerInventory.RemoveItem(this);
+                    shopKeeper.playerInventory.AddMoney(price);
+                }
+                else
+                {
+                    // equip
+                    equiomentChanger.Equip(itemScriptable.itemType, itemScriptable.label);
+                    Debug.Log("You can only sell items when the item's shop is open");
+                }
+                
             }
             
         }

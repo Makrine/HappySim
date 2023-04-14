@@ -1,11 +1,15 @@
 using UnityEngine;
 using ShopSystem;
+using System;
 
 public class PlayerInvenotry : Container
 {
     public int money = 100;
     [HideInInspector]
     public Inventory inventory;
+
+    public EventHandler onInvetoryOpen;
+    public EventHandler onInvetoryClose;
     
     /// <summary>
     /// Adds money to the player

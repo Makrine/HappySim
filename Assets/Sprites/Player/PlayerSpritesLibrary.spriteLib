@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Hat
+    m_Hash: 709290665
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: NoHat
+      m_Hash: 396608987
+      m_Sprite: {fileID: 0}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 0}
+    - m_Name: Hat
+      m_Hash: 709290665
+      m_Sprite: {fileID: -3955527744286549657, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3955527744286549657, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Body
+    m_Hash: 999990412
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: BodyRed
+      m_Hash: 817035335
+      m_Sprite: {fileID: -2439624782179321487, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2439624782179321487, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+    - m_Name: BodyGreen
+      m_Hash: 453742591
+      m_Sprite: {fileID: -3105854162545795132, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3105854162545795132, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Shirt_R
+    m_Hash: 358378887
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: BodyRed
+      m_Hash: 817035335
+      m_Sprite: {fileID: 5192701337219355329, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5192701337219355329, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+    - m_Name: BodyGreen
+      m_Hash: 453742591
+      m_Sprite: {fileID: -1698723434386808437, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1698723434386808437, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Shirt_L
+    m_Hash: 793989348
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: BodyRed
+      m_Hash: 817035335
+      m_Sprite: {fileID: 4284615687810574460, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4284615687810574460, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+    - m_Name: BodyGreen
+      m_Hash: 453742591
+      m_Sprite: {fileID: -5770586869516488468, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5770586869516488468, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: LowerBody
+    m_Hash: 1063186137
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: TrousersBlue
+      m_Hash: 616033339
+      m_Sprite: {fileID: 1039770684648341162, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1039770684648341162, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+    - m_Name: TrousersYellow
+      m_Hash: 1041373031
+      m_Sprite: {fileID: -4992630771997651408, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4992630771997651408, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Leg_L
+    m_Hash: 403231969
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: TrousersBlue
+      m_Hash: 616033339
+      m_Sprite: {fileID: -4186876068169668001, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4186876068169668001, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+    - m_Name: TrousersYellow
+      m_Hash: 1041373031
+      m_Sprite: {fileID: 6759477272443242880, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 6759477272443242880, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Leg_R
+    m_Hash: 570943874
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: TrousersBlue
+      m_Hash: 616033339
+      m_Sprite: {fileID: -6010648761613244445, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6010648761613244445, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+    - m_Name: TrousersYellow
+      m_Hash: 1041373031
+      m_Sprite: {fileID: 6240118191201801407, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 6240118191201801407, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Foot_L
+    m_Hash: 22397879
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: FootBrown
+      m_Hash: 100524962
+      m_Sprite: {fileID: 5160316284881792932, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5160316284881792932, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+    - m_Name: FootGreen
+      m_Hash: 947821015
+      m_Sprite: {fileID: 7908185766725563358, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7908185766725563358, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Foot_R
+    m_Hash: 995819220
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: FootBrown
+      m_Hash: 100524962
+      m_Sprite: {fileID: -3865478520799595346, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3865478520799595346, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+    - m_Name: FootGreen
+      m_Hash: 947821015
+      m_Sprite: {fileID: 8420655281278688579, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 8420655281278688579, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Glasses
+    m_Hash: 958358346
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: GlassesN
+      m_Hash: 357971191
+      m_Sprite: {fileID: 4290928551722938874, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4290928551722938874, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+    - m_Name: GlassesCool
+      m_Hash: 560510335
+      m_Sprite: {fileID: -1893271196608492060, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1893271196608492060, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  m_PrimaryLibraryGUID: 

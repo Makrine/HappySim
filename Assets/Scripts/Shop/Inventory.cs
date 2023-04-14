@@ -11,6 +11,8 @@ namespace ShopSystem
         public TMPro.TMP_Text moneyTxt;
         public UIManager uimanager = new();
 
+        public bool IsOpen => inventoryUI.interactable;
+
         private void Awake()
         {
             inventoryUI = GetComponent<CanvasGroup>();

@@ -44,6 +44,7 @@ namespace ShopSystem
                 {
                     shopKeeper.playerInventory.AddItem(item, ItemState.InInventory);
                     onItemRemoved?.Invoke(this, new ItemAddedEventArgs(item, false));
+                    item.equiomentChanger = shopKeeper.playerInventory.GetComponentInChildren<EquiomentChanger>();
                 }
                 Items.Clear();
             }
