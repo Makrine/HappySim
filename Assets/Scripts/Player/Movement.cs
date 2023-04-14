@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Movement : MonoBehaviour
 {
@@ -8,23 +10,26 @@ public class Movement : MonoBehaviour
     private Vector2 move = new();
     private Rigidbody2D rb;
     private Animator anim;
+
+    private PlayerInputs input;
+
+    private void Awake() 
+    {
+        input = new PlayerInputs();
+        input.Player.Enable();
+    }
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
     }
 
-    private void Update()
-    {
-        // Get the input from the player
-        move.x = Input.GetAxisRaw("Horizontal");
-        move.y = Input.GetAxisRaw("Vertical");
-
-        move.Normalize(); // Normalize the vector to prevent diagonal movement from being faster
-    }
-
     private void FixedUpdate()
     { 
+        move = input.Player.Move.ReadValue<Vector2>();
+        move.Normalize();
         // Move the player
         rb.MovePosition(rb.position + move * speed * Time.fixedDeltaTime);
 
