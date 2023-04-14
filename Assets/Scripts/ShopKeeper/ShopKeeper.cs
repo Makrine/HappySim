@@ -3,12 +3,16 @@ using ShopSystem;
 using System;
 using UnityEngine.UI;
 
+/// <summary>
+/// This class is used to control the shopkeeper of a shop
+/// </summary>
 public class ShopKeeper : MonoBehaviour
 {
-    // The shop, cart and inventory of the shopkeeper
+    // The shop and cart  of the shopkeeper
     public Shop shop;
-    public Inventory inventory;
     public Cart cart;
+
+    public Inventory inventory;
 
     // the inventory of the player who enters the shop
     public PlayerInvenotry playerInventory;
@@ -24,9 +28,6 @@ public class ShopKeeper : MonoBehaviour
 
     public UIManager uimanager = new();
 
-    // Events that are invoked when the shop is opened or closed
-    public EventHandler onShopOpen;
-    public EventHandler onShopClose;
     
     private void Awake()
     {
@@ -44,11 +45,7 @@ public class ShopKeeper : MonoBehaviour
             // using this, we will be able to sell items to the player
             // who enters the shop
             playerInventory = other.GetComponent<PlayerInvenotry>();
-            // Set the items container of the player inventory to the items container of the shop inventory
-            // This way the inventory UI will show the items of the player
-            // playerInventory.itemsContainer = inventory.itemsContainer;
-            // playerInventory.inventory = inventory;
-            // playerInventory.equipment.itemsContainer = inventory.equippedContainer;
+
             inventory.UpdateMoney(playerInventory.money);
             ShowPopup(true);
         }
@@ -77,14 +74,9 @@ public class ShopKeeper : MonoBehaviour
 
         shop.OpenShop(flag);
 
-        //inventory.OpenInventory(flag);
-        if(flag)
-            onShopOpen?.Invoke(this, EventArgs.Empty);
-        else
-            onShopClose?.Invoke(this, EventArgs.Empty);
-
     }
 
+    // this is to make sure that the popup is always above the shopkeeper
     void LateUpdate()
     {
         // Get the screen position of the game object:

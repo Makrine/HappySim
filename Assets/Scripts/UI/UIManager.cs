@@ -1,6 +1,9 @@
 using UnityEngine;
 using DG.Tweening;
 
+/// <summary>
+/// This class is used to manage the UI animations with DoTween
+/// </summary>
 [System.Serializable]
 public class UIManager
 {

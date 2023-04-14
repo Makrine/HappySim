@@ -3,6 +3,9 @@ using UnityEngine.UI;
 
 namespace ShopSystem
 {
+    /// <summary>
+    /// This class handles items in shop, cart, inventory, equipped
+    /// </summary>
     public class Item : MonoBehaviour
     {
         public ItemScriptable itemScriptable;

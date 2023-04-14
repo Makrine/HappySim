@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 namespace ShopSystem
 {
+    /// <summary>
+    /// This class handles the shop UI and the items that are in the shop.
+    /// </summary>
     public class Shop : Container
     {
         public CanvasGroup shopUI;

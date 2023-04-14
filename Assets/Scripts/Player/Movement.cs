@@ -28,13 +28,11 @@ public class Movement : MonoBehaviour
         if(playerInventory.inventory.IsOpen)
         {
             playerInventory.inventory.OpenInventory(false);
-            playerInventory.onInvetoryOpen?.Invoke(this, EventArgs.Empty);
         }
             
         else
         {
             playerInventory.inventory.OpenInventory(true);
-            playerInventory.onInvetoryClose?.Invoke(this, EventArgs.Empty);
         }
     }
 

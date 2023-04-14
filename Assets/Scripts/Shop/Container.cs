@@ -4,6 +4,11 @@ using System.Collections.Generic;
 
 namespace ShopSystem
 {
+    /// <summary>
+    /// This is a parent class for the <see cref="Cart"/>, <see cref="Shop"/> and <see cref="PlayerInvenotry"/> classes.
+    /// It contains the methods to add and remove items in the corresponding containers.
+    /// It also contains the events for when an item is added or removed.
+    /// </summary>
     public class Container : MonoBehaviour
     {
         // Events for when an item is added or removed

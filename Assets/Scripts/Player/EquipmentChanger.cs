@@ -1,11 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D.Animation;
 using ShopSystem;
 
+/// <summary>
+/// This class is used to swap the clothes of the player
+/// </summary>
 public class EquipmentChanger : MonoBehaviour
 {
+    // The renderers and resolvers for the different parts of the player
     public RendererResolver[] Top;
     public RendererResolver[] Bottom;
     public RendererResolver[] Shoes;
@@ -19,11 +21,13 @@ public class EquipmentChanger : MonoBehaviour
     }
 
     /// <summary>
-    /// Change the item of the player
+    /// Change the item of the player. Returns the current equipped item so it can be swapped
     /// </summary>
     public Item Equip(ItemType itemType, string label)
     {
         Item currentItem = null;
+
+        // Find the item in the equipment that is of the same type as the item we want to equip
         foreach (var item in equipment.Items)
         {
             if (item.itemScriptable.itemType == itemType)
@@ -32,6 +36,7 @@ public class EquipmentChanger : MonoBehaviour
                 break;
             }
         }
+
         switch (itemType)
         {
             case ItemType.Top:

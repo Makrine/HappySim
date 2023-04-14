@@ -3,6 +3,10 @@ using UnityEngine.Events;
 
 namespace ShopSystem
 {
+    /// <summary>
+    /// This is the UI represation of the <see cref="PlayerInvenotry"/> class.
+    /// </summary>
+    
     public class Inventory : MonoBehaviour
     {
         [HideInInspector]

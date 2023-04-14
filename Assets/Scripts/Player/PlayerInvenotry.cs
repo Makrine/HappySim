@@ -1,15 +1,21 @@
-using UnityEngine;
 using ShopSystem;
-using System;
 
+/// <summary>
+/// This class is used to store the items that the player has bought
+/// as well as keep track of the money the player has and the methods to add and remove money
+/// </summary>
 public class PlayerInvenotry : Container
 {
     public int money = 100;
+
+    // references to the inventory and equipment of the player
     public Inventory inventory;
     public Equipment equipment;
 
-    public EventHandler onInvetoryOpen;
-    public EventHandler onInvetoryClose;
+    private void Awake()
+    {
+        inventory.UpdateMoney(money);
+    }
     
     /// <summary>
     /// Adds money to the player

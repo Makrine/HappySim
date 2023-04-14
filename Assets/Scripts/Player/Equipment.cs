@@ -1,12 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ShopSystem;
-using System;
 
+/// <summary>
+/// This class is used to store the items that the player has equipped
+/// </summary>
 public class Equipment : Container
 {
     public GameObject itemPrefab;
+    // The container for the items that are initially worn by the player
     public List<ItemScriptable> equippedItemsScriptable = new();
     
     private void Start()
@@ -24,7 +26,7 @@ public class Equipment : Container
                 // Add the Item component to the item instance
                 Item itemComponent = itemInstance.GetComponent<Item>();
                 // assign the shopkeeper of this shop to the item
-                itemComponent.shopKeeper = GameObject.FindGameObjectWithTag("ClothesShopKeeper1").GetComponent<ShopKeeper>();
+                itemComponent.shopKeeper = GameObject.FindGameObjectWithTag(itemComponent.itemScriptable.shopKeeperTag).GetComponent<ShopKeeper>();
                 // Set the itemScriptable of the item instance to the item
                 itemComponent.itemScriptable = item;
                 // Set the itemState of the item instance to InShop

@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace ShopSystem
 {
+    /// <summary>
+    /// This class handles the items that are in the cart
+    /// </summary>
     public class Cart : Container
     {
         public TMPro.TMP_Text total_price_txt;
