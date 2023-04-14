@@ -7,6 +7,7 @@ TagManager:
   - LargeTile
   - LevelChanger
   - DangerousTile
+  - ClothesShopKeeper1
   layers:
   - Default
   - TransparentFX

@@ -4,24 +4,36 @@ using UnityEngine;
 using UnityEngine.U2D.Animation;
 using ShopSystem;
 
-public class EquiomentChanger : MonoBehaviour
+public class EquipmentChanger : MonoBehaviour
 {
-    public RendererResolver Hat;
     public RendererResolver[] Top;
     public RendererResolver[] Bottom;
     public RendererResolver[] Shoes;
     public RendererResolver Glasses;
 
+    public Equipment equipment;
+
+    private void Awake()
+    {
+        equipment = GetComponentInParent<Equipment>();
+    }
+
     /// <summary>
     /// Change the item of the player
     /// </summary>
-    public void Equip(ItemType itemType, string label)
+    public Item Equip(ItemType itemType, string label)
     {
+        Item currentItem = null;
+        foreach (var item in equipment.Items)
+        {
+            if (item.itemScriptable.itemType == itemType)
+            {
+                currentItem = item;
+                break;
+            }
+        }
         switch (itemType)
         {
-            case ItemType.Hat:
-                Hat.spriteResolver.SetCategoryAndLabel(Hat.spriteResolver.GetCategory(), label);
-                break;
             case ItemType.Top:
                 foreach (var item in Top)
                 {
@@ -46,6 +58,7 @@ public class EquiomentChanger : MonoBehaviour
             default:
                 break;
         }
+        return currentItem;
     }
 }
 
@@ -60,8 +73,6 @@ public class RendererResolver
 
 public static class Labels
 {
-    public static string noHat = "NoHat";
-    public static string greenHat = "Hat";
     public static string bodyRed = "BodyRed";
     public static string bodyGreen = "BodyGreen";
     public static string TrousersBlue = "TrousersBlue";

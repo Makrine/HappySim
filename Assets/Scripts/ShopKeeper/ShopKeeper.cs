@@ -46,8 +46,9 @@ public class ShopKeeper : MonoBehaviour
             playerInventory = other.GetComponent<PlayerInvenotry>();
             // Set the items container of the player inventory to the items container of the shop inventory
             // This way the inventory UI will show the items of the player
-            playerInventory.itemsContainer = inventory.itemsContainer;
-            playerInventory.inventory = inventory;
+            // playerInventory.itemsContainer = inventory.itemsContainer;
+            // playerInventory.inventory = inventory;
+            // playerInventory.equipment.itemsContainer = inventory.equippedContainer;
             inventory.UpdateMoney(playerInventory.money);
             ShowPopup(true);
         }

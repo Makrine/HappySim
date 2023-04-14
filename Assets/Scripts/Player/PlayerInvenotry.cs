@@ -5,8 +5,8 @@ using System;
 public class PlayerInvenotry : Container
 {
     public int money = 100;
-    [HideInInspector]
     public Inventory inventory;
+    public Equipment equipment;
 
     public EventHandler onInvetoryOpen;
     public EventHandler onInvetoryClose;

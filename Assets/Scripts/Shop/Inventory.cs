@@ -8,6 +8,7 @@ namespace ShopSystem
         [HideInInspector]
         public CanvasGroup inventoryUI;
         public Transform itemsContainer;
+        public Transform equippedContainer;
         public TMPro.TMP_Text moneyTxt;
         public UIManager uimanager = new();
 

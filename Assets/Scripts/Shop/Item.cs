@@ -19,7 +19,7 @@ namespace ShopSystem
         public ShopKeeper shopKeeper;
 
         [HideInInspector]
-        public EquiomentChanger equiomentChanger;
+        public EquipmentChanger equiomentChanger;
 
         private void Start()
         {
@@ -62,10 +62,19 @@ namespace ShopSystem
                 else
                 {
                     // equip
-                    equiomentChanger.Equip(itemScriptable.itemType, itemScriptable.label);
+                    Item item = equiomentChanger.Equip(itemScriptable.itemType, itemScriptable.label);
+                    shopKeeper.playerInventory.equipment.AddItem(this, ItemState.Equipped);
+                    shopKeeper.playerInventory.RemoveItem(this);
+
+                    shopKeeper.playerInventory.equipment.RemoveItem(item);
+                    shopKeeper.playerInventory.AddItem(item, ItemState.InInventory);
                     Debug.Log("You can only sell items when the item's shop is open");
                 }
                 
+            }
+            else if(itemState == ItemState.Equipped)
+            {
+                //Debug.Log("Wait, working on it");
             }
             
         }
@@ -77,6 +86,7 @@ namespace ShopSystem
     {
         InShop,
         InCart,
-        InInventory
+        InInventory,
+        Equipped
     }
 }

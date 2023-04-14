@@ -258,6 +258,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429229}
   m_CullTransparentMesh: 1
+--- !u!1 &18238957
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 18238958}
+  - component: {fileID: 18238959}
+  m_Layer: 0
+  m_Name: equipped
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &18238958
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18238957}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 411650884}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 40.8}
+  m_SizeDelta: {x: 227.6574, y: 114.15}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &18238959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18238957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 64, y: 110}
+  m_Spacing: {x: 5, y: 5}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &70883276
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +772,7 @@ GameObject:
   - component: {fileID: 321424517}
   - component: {fileID: 321424516}
   - component: {fileID: 321424515}
+  - component: {fileID: 321424520}
   m_Layer: 0
   m_Name: CharacterMakrine
   m_TagString: Player
@@ -745,9 +807,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Items: []
-  itemsContainer: {fileID: 0}
+  itemsContainer: {fileID: 1547981889}
   money: 100
   inventory: {fileID: 411650888}
+  equipment: {fileID: 321424520}
 --- !u!61 &321424517
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -812,6 +875,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &321424520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321424514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11f288270a382f49b851df5d6da62e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Items: []
+  itemsContainer: {fileID: 18238958}
+  itemPrefab: {fileID: 6842758112400851772, guid: f400bb88e68ca624a84c14b9009167c3, type: 3}
+  equippedItemsScriptable:
+  - {fileID: 11400000, guid: dc64c79ed2cc7f047a34b43fbc67c5a4, type: 2}
+  - {fileID: 11400000, guid: 5665a8b8c8ebcca44a0c4e694dcd9e24, type: 2}
+  - {fileID: 11400000, guid: 2df5fd26061becd4ba4fcf14be291f57, type: 2}
+  - {fileID: 11400000, guid: 61cbcab922d324a49acf122dc262afd1, type: 2}
 --- !u!1 &333428493
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,6 +1063,7 @@ RectTransform:
   m_Children:
   - {fileID: 1547981889}
   - {fileID: 1602259734}
+  - {fileID: 18238958}
   m_Father: {fileID: 2135414802}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1040,6 +1124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 0}
   itemsContainer: {fileID: 1547981889}
+  equippedContainer: {fileID: 18238958}
   moneyTxt: {fileID: 1602259735}
   uimanager:
     fadeTime: 1
@@ -1419,7 +1504,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 81b1069c437dc6f418fffb96279926b5, type: 2}
   - {fileID: 11400000, guid: eec69827d8afc8843aa8b5280df09c5a, type: 2}
   - {fileID: 11400000, guid: 00c973156d60e4343b148dbaee45df63, type: 2}
-  - {fileID: 11400000, guid: f6d4ea31137caa84e8cd951ebc024db7, type: 2}
   - {fileID: 11400000, guid: fc07f0c2a79487b478f4c18a78c9c435, type: 2}
   shopKeeper: {fileID: 816413324}
   close: {fileID: 980475625}
@@ -2164,7 +2248,7 @@ GameObject:
   - component: {fileID: 816413324}
   m_Layer: 0
   m_Name: ShopKeeper
-  m_TagString: Untagged
+  m_TagString: ClothesShopKeeper1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

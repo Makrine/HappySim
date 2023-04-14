@@ -12,7 +12,7 @@ namespace ShopSystem
         public Sprite itemSprite;
         public Sprite itemSpriteUI;
         public string label;
-
+        public string shopKeeperTag;
         
     }
 
