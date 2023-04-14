@@ -22,6 +22,8 @@ public class ShopKeeper : MonoBehaviour
     public Button noBtn;
     public Button yesBtn;
 
+    public UIManager uimanager = new();
+
     // Events that are invoked when the shop is opened or closed
     public EventHandler onShopOpen;
     public EventHandler onShopClose;
@@ -45,6 +47,8 @@ public class ShopKeeper : MonoBehaviour
             // Set the items container of the player inventory to the items container of the shop inventory
             // This way the inventory UI will show the items of the player
             playerInventory.itemsContainer = inventory.itemsContainer;
+            playerInventory.inventory = inventory;
+            inventory.UpdateMoney(playerInventory.money);
             ShowPopup(true);
         }
     }
@@ -54,13 +58,16 @@ public class ShopKeeper : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             ShowPopup(false);
-            OpenShop(false);
+
+            if(shop.IsOpen)
+                OpenShop(false);
         }
     }
 
     private void ShowPopup(bool flag)
     {
-        messagePopup.gameObject.SetActive(flag);
+        if(flag) uimanager.FadeInPopup();
+        else uimanager.FadeOutPopup();
     }
 
     private void OpenShop(bool flag)
@@ -68,7 +75,8 @@ public class ShopKeeper : MonoBehaviour
         ShowPopup(false);
 
         shop.OpenShop(flag);
-        inventory.OpenInventory(flag);
+
+        //inventory.OpenInventory(flag);
         if(flag)
             onShopOpen?.Invoke(this, EventArgs.Empty);
         else

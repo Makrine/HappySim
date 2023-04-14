@@ -4,6 +4,8 @@ using ShopSystem;
 public class PlayerInvenotry : Container
 {
     public int money = 100;
+    [HideInInspector]
+    public Inventory inventory;
     
     /// <summary>
     /// Adds money to the player
@@ -11,6 +13,7 @@ public class PlayerInvenotry : Container
     public void AddMoney(int amount)
     {
         money += amount;
+        inventory.UpdateMoney(money);
     }
 
     /// <summary>
@@ -21,6 +24,7 @@ public class PlayerInvenotry : Container
         if(money >= amount)
         {
             money -= amount;
+            inventory.UpdateMoney(money);
             return true;
         }
         return false;

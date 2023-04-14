@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ShopSystem
 {
@@ -7,6 +8,8 @@ namespace ShopSystem
         [HideInInspector]
         public CanvasGroup inventoryUI;
         public Transform itemsContainer;
+        public TMPro.TMP_Text moneyTxt;
+        public UIManager uimanager = new();
 
         private void Awake()
         {
@@ -17,9 +20,20 @@ namespace ShopSystem
         /// </summary>
          public void OpenInventory(bool flag)
          {
-              inventoryUI.alpha = flag ? 1 : 0;
+            if(flag)
+                uimanager.FadeInPanel();
+            else
+                uimanager.FadeOutPanel();
               inventoryUI.interactable = flag;
               inventoryUI.blocksRaycasts = flag;
          }
+
+        /// <summary>
+        /// Update the money text
+        /// </summary>
+        public void UpdateMoney(int money)
+        {
+            moneyTxt.text = money.ToString();
+        }
     }
 }

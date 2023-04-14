@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ShopSystem
 {
@@ -12,9 +13,15 @@ namespace ShopSystem
         [HideInInspector]
         public ShopKeeper shopKeeper;
 
+        public bool IsOpen => shopUI.interactable;
+
+        public Button close;
+        public UIManager uimanager = new();
+
         private void Awake() 
         {
             shopUI = GetComponent<CanvasGroup>();
+            close.onClick.AddListener(() => OpenShop(false));
             // Populate the shop with items
             PopulateShop();
         }
@@ -25,7 +32,12 @@ namespace ShopSystem
         /// </summary>
         public void OpenShop(bool flag)
         {
-            shopUI.alpha = flag ? 1 : 0;
+            if(flag)
+                uimanager.FadeInPanel();
+            else
+                uimanager.FadeOutPanel();
+            shopKeeper.inventory.OpenInventory(flag);
+            //shopUI.alpha = flag ? 1 : 0;
             shopUI.interactable = flag;
             shopUI.blocksRaycasts = flag;
         }
