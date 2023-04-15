@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RedTop
   m_EditorClassIdentifier: 
   itemType: 1
-  itemName: RedTop
+  itemName: Red Top
   price: 20
-  itemSprite: {fileID: -2439624782179321487, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
-  itemSpriteUI: {fileID: -2439624782179321487, guid: 51ef6ff45a3c1434fa7787046b8985a7, type: 3}
+  itemSpriteUI: {fileID: 1443834527, guid: 3928675b02a38dc4b855702c61776aee, type: 3}
   label: BodyRed
+  shopKeeperTag: ClothesShopKeeper1

@@ -21,6 +21,20 @@ namespace ShopSystem
             onItemAdded += UpdateTotalPrice;
             onItemRemoved += UpdateTotalPrice;
         }
+
+        /// <summary>
+        /// Override the AddItem method to limit the number of items in the cart to 3
+        /// </summary>
+        public override bool AddItem(Item item, ItemState itemState)
+        {
+            if(Items.Count == 3)
+            {
+                Debug.Log("Cart is full");
+                return false;
+            }
+            base.AddItem(item, itemState);
+            return true;
+        }
         
         /// <summary>
         /// Updates the total price of the cart when an item is added

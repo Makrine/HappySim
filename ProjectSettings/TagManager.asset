@@ -48,6 +48,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: EnvironmentObjects
+    uniqueID: 2492954711
+    locked: 0
   - name: Player
     uniqueID: 614404919
+    locked: 0
+  - name: InFrontOfPlayer
+    uniqueID: 2914562907
     locked: 0

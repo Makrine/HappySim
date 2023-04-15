@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace ShopSystem
 {
@@ -15,12 +15,14 @@ namespace ShopSystem
         public Transform equippedContainer;
         public TMPro.TMP_Text moneyTxt;
         public UIManager uimanager = new();
+        public Button close;
 
         public bool IsOpen => inventoryUI.interactable;
 
         private void Awake()
         {
             inventoryUI = GetComponent<CanvasGroup>();
+            close.onClick.AddListener(() => OpenInventory(false));
         }
         /// <summary>
         /// Open or close the inventory UI

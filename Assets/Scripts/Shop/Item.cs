@@ -41,9 +41,9 @@ namespace ShopSystem
         {
             if(itemState == ItemState.InShop)
             {
-                // Add item to cart
-                shopKeeper.cart.AddItem(this, ItemState.InCart);
-                shopKeeper.shop.RemoveItem(this);
+                // Add item to cart if there is space
+                if(shopKeeper.cart.AddItem(this, ItemState.InCart))
+                    shopKeeper.shop.RemoveItem(this);
             }
             else if(itemState == ItemState.InCart)
             {

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BrownShoes
   m_EditorClassIdentifier: 
   itemType: 3
-  itemName: BrownShoes
+  itemName: Brown Shoes
   price: 5
-  itemSprite: {fileID: 21300000, guid: a7cebed80fed81542b7ed3371081d74c, type: 3}
-  itemSpriteUI: {fileID: 21300000, guid: a7cebed80fed81542b7ed3371081d74c, type: 3}
+  itemSpriteUI: {fileID: -891910259, guid: 3928675b02a38dc4b855702c61776aee, type: 3}
   label: FootBrown
+  shopKeeperTag: ClothesShopKeeper1

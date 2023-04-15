@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CoolGlasses
   m_EditorClassIdentifier: 
   itemType: 4
-  itemName: CoolGlasses
-  price: 10
-  itemSprite: {fileID: 21300000, guid: fd7474bd4d665ab4a9023cb9bd5ed052, type: 3}
-  itemSpriteUI: {fileID: 21300000, guid: fd7474bd4d665ab4a9023cb9bd5ed052, type: 3}
+  itemName: Cool Glasses
+  price: 50
+  itemSpriteUI: {fileID: -363734310, guid: 3928675b02a38dc4b855702c61776aee, type: 3}
   label: GlassesCool
+  shopKeeperTag: ClothesShopKeeper1

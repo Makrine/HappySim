@@ -21,7 +21,7 @@ namespace ShopSystem
         /// <summary>
         /// Add an <see cref="Item"/> to the inventory.
         /// </summary>
-        public virtual void AddItem(Item item, ItemState itemState)
+        public virtual bool AddItem(Item item, ItemState itemState)
         {
             if(item != null)
             {
@@ -30,9 +30,12 @@ namespace ShopSystem
                 item.transform.SetParent(itemsContainer);
                 // Invoke the onItemAdded event
                 onItemAdded?.Invoke(this, new ItemAddedEventArgs(item, true));
+                return true;
             }
             else
                 Debug.LogError("Item is null and cannot be added");
+            
+            return false;
         }
 
         /// <summary>
