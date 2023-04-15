@@ -169,8 +169,8 @@ MonoBehaviour:
       m_Sprite: {fileID: 7908185766725563358, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 7908185766725563358, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
-    - m_Name: FootMakrina
-      m_Hash: 289140199
+    - m_Name: ShoesMakrina
+      m_Hash: 26031566
       m_Sprite: {fileID: -1764286941027524492, guid: 150f8d4965026f940bd6a3aa0bd69df2, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -1764286941027524492, guid: 150f8d4965026f940bd6a3aa0bd69df2, type: 3}
@@ -190,8 +190,8 @@ MonoBehaviour:
       m_Sprite: {fileID: 8420655281278688579, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 8420655281278688579, guid: e99f9ce9b2073774f86eba2f447cfe4d, type: 3}
-    - m_Name: FootMakrina
-      m_Hash: 289140199
+    - m_Name: ShoesMakrina
+      m_Hash: 26031566
       m_Sprite: {fileID: 2613044534348161408, guid: 150f8d4965026f940bd6a3aa0bd69df2, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 2613044534348161408, guid: 150f8d4965026f940bd6a3aa0bd69df2, type: 3}

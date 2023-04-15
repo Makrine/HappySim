@@ -22,6 +22,8 @@ namespace ShopSystem
         public Button close;
         public DoTweensManager uimanager = new();
 
+        public static Shop CurrentlyOpenShop;
+
         private void Awake() 
         {
             shopUI = GetComponent<CanvasGroup>();
@@ -37,9 +39,15 @@ namespace ShopSystem
         public void OpenShop(bool flag)
         {
             if(flag)
+            {
+                CurrentlyOpenShop = this;
                 uimanager.FadeInPanel();
+            }
             else
+            {
                 uimanager.FadeOutPanel();
+                CurrentlyOpenShop = null;
+            }
             shopKeeper.inventory.OpenInventory(flag);
             //shopUI.alpha = flag ? 1 : 0;
             shopUI.interactable = flag;

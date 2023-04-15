@@ -16,5 +16,5 @@ MonoBehaviour:
   itemName: Makrina Top
   price: 25
   itemSpriteUI: {fileID: 1005035458, guid: 38812bcb65b257b45a3b90d9f940a599, type: 3}
-  label: TopMakrina
+  label: BodyMakrina
   shopKeeperTag: ClothesShopKeeper2

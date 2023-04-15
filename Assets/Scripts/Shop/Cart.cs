@@ -58,6 +58,10 @@ namespace ShopSystem
         // called from a button
         public void BuyAllItems()
         {
+            bool willOpenBubbleSpeech = false;
+
+            if(Items.Count > 0)
+                willOpenBubbleSpeech = true;
             if(shopKeeper.playerInventory.RemoveMoney(total_price))
             {
                 shopKeeper.OnEnoughMoney?.Invoke(this, null);
@@ -75,7 +79,7 @@ namespace ShopSystem
                 Debug.Log("Not enough money :(");
             }
             
-            if(Items.Count > 0)
+            if(willOpenBubbleSpeech)
                 StartCoroutine(shopKeeper.BubbleSpeech());
         }
 

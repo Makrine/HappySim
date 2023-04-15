@@ -65,6 +65,12 @@ namespace ShopSystem
                     shopKeeper.OnItemBought?.Invoke(this, null);
                     StartCoroutine(shopKeeper.BubbleSpeech());
                 }
+                else if(Shop.CurrentlyOpenShop != null)
+                {
+                    Debug.Log("You can only sell items when the item's shop is open");
+                    Shop.CurrentlyOpenShop.shopKeeper.OnItemNotBought?.Invoke(this, null);
+                    StartCoroutine(Shop.CurrentlyOpenShop.shopKeeper.BubbleSpeech());
+                }
                 else
                 {
                     // equip
@@ -74,9 +80,9 @@ namespace ShopSystem
 
                     shopKeeper.playerInventory.equipment.RemoveItem(item);
                     shopKeeper.playerInventory.AddItem(item, ItemState.InInventory);
-                    Debug.Log("You can only sell items when the item's shop is open");
-                    shopKeeper.OnItemNotBought?.Invoke(this, null);
-                    StartCoroutine(shopKeeper.BubbleSpeech());
+                    // Debug.Log("You can only sell items when the item's shop is open");
+                    // shopKeeper.OnItemNotBought?.Invoke(this, null);
+                    // StartCoroutine(shopKeeper.BubbleSpeech());
                 }
                 
             }
