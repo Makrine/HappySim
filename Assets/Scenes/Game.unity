@@ -100675,8 +100675,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015258789, y: 0}
-  m_SizeDelta: {x: 326.7025, y: 345.5692}
+  m_AnchoredPosition: {x: 0.000015258789, y: 0.0000019073486}
+  m_SizeDelta: {x: 326.7025, y: 401.4711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &703487521
 MonoBehaviour:
@@ -108371,8 +108371,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0005493164, y: 0.0009613}
-  m_SizeDelta: {x: 387.6, y: 387.98}
+  m_AnchoredPosition: {x: 0.0005493164, y: -30.6272}
+  m_SizeDelta: {x: 387.6, y: 449.2362}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1789831539
 CanvasGroup:
@@ -109493,7 +109493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.0000000037252903}
+  m_AnchoredPosition: {x: 0, y: 34.7}
   m_SizeDelta: {x: 287.9342, y: 291.963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1973262451
@@ -109526,6 +109526,9 @@ MonoBehaviour:
     Go to the Gucci or Makrina Shopkeeper to purchase some
     fancy clothes!
 
+    You must close shop in order to equip items. Otherwise, you
+    just sell it back to the shop.
+
 
     Go To the fountain, play Uke and earn money!'
   m_isRightToLeft: 0
@@ -109554,7 +109557,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.2
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

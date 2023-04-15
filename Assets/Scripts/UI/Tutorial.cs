@@ -23,13 +23,6 @@ public class Tutorial : MonoBehaviour
         dotweenManager.FadeInPopup();
         dotweenManager.canvasGroup.interactable = true;
         dotweenManager.canvasGroup.blocksRaycasts = true;
-        yield return new WaitForSeconds(waitTillClose);
-        if(dotweenManager.canvasGroup.alpha == 1)
-        {
-            dotweenManager.FadeOutPopup();
-            dotweenManager.canvasGroup.interactable = false;
-            dotweenManager.canvasGroup.blocksRaycasts = false;
-        }
         
     }
 
