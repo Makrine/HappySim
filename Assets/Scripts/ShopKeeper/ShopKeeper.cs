@@ -2,6 +2,8 @@ using UnityEngine;
 using ShopSystem;
 using System;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using System.Collections;
 
 /// <summary>
 /// This class is used to control the shopkeeper of a shop
@@ -20,13 +22,18 @@ public class ShopKeeper : MonoBehaviour
 
     // the message that pops up when the player interacts with the shopkeeper
     public RectTransform messagePopup;
+    public TMPro.TMP_Text label;
+    public Transform bubbleSpeech;
     // the offset of the message popup from the shopkeeper
     public Vector2 offset;
+    public Vector2 labelOffset;
+    public Vector2 bubbleSpeechOffset;
 
     public Button noBtn;
     public Button yesBtn;
 
-    public DoTweensManager uimanager = new();
+    public DoTweensManager shopDotweens = new();
+    public DoTweensManager bubbleSpeechDoTween = new();
     
     
     private void Awake()
@@ -66,8 +73,15 @@ public class ShopKeeper : MonoBehaviour
 
     private void ShowPopup(bool flag)
     {
-        if(flag) uimanager.FadeInPopup();
-        else uimanager.FadeOutPopup();
+        if(flag) 
+        {
+            shopDotweens.FadeInPopup();
+            if(shop.Items.Count == 0)
+                messagePopup.GetComponentInChildren<TMPro.TMP_Text>().text = "Unfortunatly, I don't have any more items to sell. But you can sell me some!";
+            else
+                messagePopup.GetComponentInChildren<TMPro.TMP_Text>().text = "Hello! Would you like to buy or sell some cool items from Gucci?";
+        }
+        else shopDotweens.FadeOutPopup();
     }
 
     private void OpenShop(bool flag)
@@ -85,5 +99,17 @@ public class ShopKeeper : MonoBehaviour
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
         // Set the position of the popup
         messagePopup.position = new Vector3(screenPos.x + offset.x, screenPos.y + offset.y, 0);
+        label.transform.position = new Vector3(screenPos.x + labelOffset.x, screenPos.y + labelOffset.y, 0);
+        bubbleSpeech.position = new Vector3(screenPos.x + bubbleSpeechOffset.x, screenPos.y + bubbleSpeechOffset.y, 0);
+    }
+
+    /// <summary>
+    /// This is called when a player buys an item so the shopkeeper says something
+    /// </summary>
+    public IEnumerator BubbleSpeech()
+    {
+        bubbleSpeechDoTween.FadeInPopup();
+        yield return new WaitForSeconds(2f);
+        bubbleSpeechDoTween.FadeOutPopup();
     }
 }

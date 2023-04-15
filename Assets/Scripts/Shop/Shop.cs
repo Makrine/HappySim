@@ -9,6 +9,7 @@ namespace ShopSystem
     /// </summary>
     public class Shop : Container
     {
+        public string shopKeeperTag = "ShopKeeper1";
         public CanvasGroup shopUI;
         public GameObject itemPrefab;
         public List<ItemScriptable> ShopItemsScriptable = new List<ItemScriptable>();
@@ -51,6 +52,7 @@ namespace ShopSystem
         /// </summary>
         private void PopulateShop()
         {
+            shopKeeper = GameObject.FindGameObjectWithTag(shopKeeperTag).GetComponent<ShopKeeper>();
             foreach (var item in ShopItemsScriptable)
             {
                 // Create a new item instance GO and set its parent to the itemsContainer
@@ -58,6 +60,7 @@ namespace ShopSystem
                 // Add the Item component to the item instance
                 Item itemComponent = itemInstance.GetComponent<Item>();
                 // assign the shopkeeper of this shop to the item
+                Debug.Log("Shopkeeper from Item: " + shopKeeper);
                 itemComponent.shopKeeper = shopKeeper;
                 // Set the itemScriptable of the item instance to the item
                 itemComponent.itemScriptable = item;

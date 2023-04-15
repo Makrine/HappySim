@@ -7,6 +7,7 @@ namespace ShopSystem
     /// </summary>
     public class Cart : Container
     {
+        public string shopKeeperTag = "ShopKeeper1";
         public TMPro.TMP_Text total_price_txt;
         public int total_price;
 
@@ -20,6 +21,8 @@ namespace ShopSystem
             // Add listeners to the onItemAdded event and onItemRemoved event
             onItemAdded += UpdateTotalPrice;
             onItemRemoved += UpdateTotalPrice;
+
+            shopKeeper = GameObject.FindGameObjectWithTag(shopKeeperTag).GetComponent<ShopKeeper>();
         }
 
         /// <summary>
@@ -55,6 +58,8 @@ namespace ShopSystem
         // called from a button
         public void BuyAllItems()
         {
+            if(Items.Count > 0)
+                StartCoroutine(shopKeeper.BubbleSpeech());
             if(shopKeeper.playerInventory.RemoveMoney(total_price))
             {
                 foreach (var item in Items)

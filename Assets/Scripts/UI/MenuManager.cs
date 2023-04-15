@@ -62,7 +62,10 @@ public class MenuManager : MonoBehaviour
     /// Open or close a panel
     /// </summary>
     public void OpenPanel(bool flag, DoTweensManager uiManager, ref bool isPanelOpen)
-    {   
+    {
+        // If the settings or credits panel is open, don't open the other one
+        if(flag && (isSettingsOpen || isCreditsOpen))
+            return;
         if(flag)
         {
             uiManagerMenu.GoLeft();
@@ -79,8 +82,7 @@ public class MenuManager : MonoBehaviour
             uiManager.canvasGroup.interactable = false;
             uiManager.canvasGroup.blocksRaycasts = false;
             isPanelOpen = false;
-        }
-           
+        }        
     }
 
 

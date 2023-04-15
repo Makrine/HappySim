@@ -28,6 +28,7 @@ namespace ShopSystem
         {
             // Add a listener to the button click event
             btn.onClick.AddListener(HandleItemClick);
+            Debug.Log("Shopkeeper: " + shopKeeper);
         }
 
 
