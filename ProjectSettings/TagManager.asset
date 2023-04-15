@@ -9,6 +9,7 @@ TagManager:
   - DangerousTile
   - ClothesShopKeeper1
   - Menu
+  - ClothesShopKeeper2
   layers:
   - Default
   - TransparentFX

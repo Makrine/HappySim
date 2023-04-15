@@ -60,7 +60,6 @@ namespace ShopSystem
                 // Add the Item component to the item instance
                 Item itemComponent = itemInstance.GetComponent<Item>();
                 // assign the shopkeeper of this shop to the item
-                Debug.Log("Shopkeeper from Item: " + shopKeeper);
                 itemComponent.shopKeeper = shopKeeper;
                 // Set the itemScriptable of the item instance to the item
                 itemComponent.itemScriptable = item;
