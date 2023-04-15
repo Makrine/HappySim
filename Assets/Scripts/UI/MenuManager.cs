@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
     public Button startOrMenu;
     public Button settings;
     public Button credits;
+    public Button exit;
 
     [HideInInspector]
     public SceneLoader sceneLoader;
@@ -31,7 +32,7 @@ public class MenuManager : MonoBehaviour
     private void Start()
     {
         sceneLoader = GetComponentInParent<SceneLoader>();
-
+        exit.onClick.AddListener(() => GameManager.Instance.ExitGame());
         startOrMenu.onClick.AddListener(LoadScene);
         settings.onClick.AddListener(() => OpenPanel(true, uiManagerSettings, ref isSettingsOpen));
         settingsClose.onClick.AddListener(() => OpenPanel(false, uiManagerSettings, ref isSettingsOpen));

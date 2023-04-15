@@ -155,6 +155,7 @@ Library: lib_burst_generated
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Cinemachine.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
+--root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Services.Core.Internal.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Services.Core.Analytics.dll
@@ -165,7 +166,6 @@ Library: lib_burst_generated
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.2D.Common.Runtime.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.2D.IK.Runtime.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Services.Core.Device.dll
---root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Services.Core.Threading.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.2D.Tilemap.Extras.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Services.Core.Networking.dll
@@ -336,6 +336,7 @@ Library: lib_burst_generated
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Cinemachine.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
+--root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Services.Core.Internal.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Services.Core.Analytics.dll
@@ -346,7 +347,6 @@ Library: lib_burst_generated
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.2D.Common.Runtime.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.2D.IK.Runtime.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Services.Core.Device.dll
---root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Assembly-CSharp.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Services.Core.Threading.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.2D.Tilemap.Extras.dll
 --root-assembly=D:\Unity\MyGames\HappySim\Temp\StagingArea\Data\Managed\Unity.Services.Core.Networking.dll

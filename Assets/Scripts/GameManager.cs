@@ -21,4 +21,14 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = flag ? 0 : 1;
     }
+
+    public void ExitGame()
+    {
+        // if Editor
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
+    }
 }
