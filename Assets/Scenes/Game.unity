@@ -109493,8 +109493,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 34.7}
-  m_SizeDelta: {x: 287.9342, y: 291.963}
+  m_AnchoredPosition: {x: 0, y: 2.2701}
+  m_SizeDelta: {x: 287.9342, y: 356.8225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1973262451
 MonoBehaviour:
@@ -109526,11 +109526,14 @@ MonoBehaviour:
     Go to the Gucci or Makrina Shopkeeper to purchase some
     fancy clothes!
 
-    You must close shop in order to equip items. Otherwise, you
-    just sell it back to the shop.
+    Makrina shopkeeper is in the east.
+
+    You must close shop
+    in order to equip items. Otherwise, you just sell it back to the shop.
 
 
-    Go To the fountain, play Uke and earn money!'
+    Go
+    To the fountain, play Uke and earn money! It''s in the south!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5503710b20a65084591bc898434101cb, type: 2}
   m_sharedMaterial: {fileID: 3771900572407506553, guid: 5503710b20a65084591bc898434101cb, type: 2}
@@ -109557,11 +109560,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 17.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
