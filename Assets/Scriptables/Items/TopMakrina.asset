@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de8e92f9573294b4ba153135c4d6a020, type: 3}
+  m_Name: TopMakrina
+  m_EditorClassIdentifier: 
+  itemType: 1
+  itemName: Makrina Top
+  price: 25
+  itemSpriteUI: {fileID: 1005035458, guid: 38812bcb65b257b45a3b90d9f940a599, type: 3}
+  label: TopMakrina
+  shopKeeperTag: ClothesShopKeeper2

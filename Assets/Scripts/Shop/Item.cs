@@ -28,7 +28,6 @@ namespace ShopSystem
         {
             // Add a listener to the button click event
             btn.onClick.AddListener(HandleItemClick);
-            Debug.Log("Shopkeeper: " + shopKeeper);
         }
 
 
@@ -63,6 +62,8 @@ namespace ShopSystem
                     shopKeeper.shop.AddItem(this, ItemState.InShop);
                     shopKeeper.playerInventory.RemoveItem(this);
                     shopKeeper.playerInventory.AddMoney(price);
+                    shopKeeper.OnItemBought?.Invoke(this, null);
+                    StartCoroutine(shopKeeper.BubbleSpeech());
                 }
                 else
                 {
@@ -74,6 +75,8 @@ namespace ShopSystem
                     shopKeeper.playerInventory.equipment.RemoveItem(item);
                     shopKeeper.playerInventory.AddItem(item, ItemState.InInventory);
                     Debug.Log("You can only sell items when the item's shop is open");
+                    shopKeeper.OnItemNotBought?.Invoke(this, null);
+                    StartCoroutine(shopKeeper.BubbleSpeech());
                 }
                 
             }

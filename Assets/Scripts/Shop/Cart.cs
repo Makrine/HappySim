@@ -58,10 +58,9 @@ namespace ShopSystem
         // called from a button
         public void BuyAllItems()
         {
-            if(Items.Count > 0)
-                StartCoroutine(shopKeeper.BubbleSpeech());
             if(shopKeeper.playerInventory.RemoveMoney(total_price))
             {
+                shopKeeper.OnEnoughMoney?.Invoke(this, null);
                 foreach (var item in Items)
                 {
                     shopKeeper.playerInventory.AddItem(item, ItemState.InInventory);
@@ -72,9 +71,12 @@ namespace ShopSystem
             }
             else
             {
+                shopKeeper.OnNotEnoughMoney?.Invoke(this, null);
                 Debug.Log("Not enough money :(");
             }
             
+            if(Items.Count > 0)
+                StartCoroutine(shopKeeper.BubbleSpeech());
         }
 
     }
