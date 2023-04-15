@@ -9,17 +9,19 @@ namespace ShopSystem
         public ItemType itemType;
         public string itemName;
         public int price;
-        public Sprite itemSprite;
         public Sprite itemSpriteUI;
+        public string label;
+        public string shopKeeperTag;
+        
+    }
 
-
-        [System.Serializable]
+    [System.Serializable]
         public enum ItemType
         {
             Hat,
             Top,
             Bottom,
-            Shoes
+            Shoes,
+            Glasses
         }
-    }
 }
