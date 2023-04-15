@@ -1,4 +1,5 @@
 using ShopSystem;
+using UnityEngine.InputSystem;
 
 /// <summary>
 /// This class is used to store the items that the player has bought
@@ -17,6 +18,19 @@ public class PlayerInvenotry : Container
         inventory.UpdateMoney(money);
     }
     
+    public void OpenInvetory(InputAction.CallbackContext obj)
+    {
+        if(inventory.IsOpen)
+        {
+            inventory.OpenInventory(false);
+        }
+            
+        else
+        {
+            inventory.OpenInventory(true);
+        }
+    }
+
     /// <summary>
     /// Adds money to the player
     /// </summary>

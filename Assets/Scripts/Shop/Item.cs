@@ -39,6 +39,7 @@ namespace ShopSystem
         /// </summary>
         private void HandleItemClick()
         {
+            AudioManager.Instance.PlayAudio(AudioManager.Instance.buttonClick);
             if(itemState == ItemState.InShop)
             {
                 // Add item to cart if there is space

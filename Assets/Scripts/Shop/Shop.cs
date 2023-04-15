@@ -19,7 +19,7 @@ namespace ShopSystem
         public bool IsOpen => shopUI.interactable;
 
         public Button close;
-        public UIManager uimanager = new();
+        public DoTweensManager uimanager = new();
 
         private void Awake() 
         {

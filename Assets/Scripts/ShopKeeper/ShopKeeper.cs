@@ -26,8 +26,8 @@ public class ShopKeeper : MonoBehaviour
     public Button noBtn;
     public Button yesBtn;
 
-    public UIManager uimanager = new();
-
+    public DoTweensManager uimanager = new();
+    
     
     private void Awake()
     {
@@ -41,6 +41,7 @@ public class ShopKeeper : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            AudioManager.Instance.PlayAudio(AudioManager.Instance.popup);
             // Get the inventory of the player who entered the shop
             // using this, we will be able to sell items to the player
             // who enters the shop
@@ -55,6 +56,7 @@ public class ShopKeeper : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            AudioManager.Instance.PlayAudio(AudioManager.Instance.popupClose);
             ShowPopup(false);
 
             if(shop.IsOpen)

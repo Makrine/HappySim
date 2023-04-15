@@ -14,7 +14,7 @@ namespace ShopSystem
         public Transform itemsContainer;
         public Transform equippedContainer;
         public TMPro.TMP_Text moneyTxt;
-        public UIManager uimanager = new();
+        public DoTweensManager uimanager = new();
         public Button close;
 
         public bool IsOpen => inventoryUI.interactable;
