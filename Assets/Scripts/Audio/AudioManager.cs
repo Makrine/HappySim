@@ -5,6 +5,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip buttonClick;
     public AudioClip popup;
     public AudioClip popupClose;
+    public AudioClip coins;
     public static AudioManager Instance;
     public AudioSource audioSourceBackground;
     public AudioSource audioSourceEffects;

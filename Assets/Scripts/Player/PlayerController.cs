@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private PlayerInputs input;
 
     public PlayerInvenotry playerInventory;
+    public UkePlaying ukePlaying;
 
     private CanvasGroup menuCanvasGroup;
 
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
         input.Player.Enable();
 
         input.Player.Inventory.performed += playerInventory.OpenInvetory;
+        input.Player.Move.performed += ctx => ukePlaying.PlayUke(false);
     }
     private void OnDisable()
     {

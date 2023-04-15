@@ -50,6 +50,7 @@ MonoBehaviour:
   buttonClick: {fileID: 8300000, guid: c83695c05a649a947b3225e7922ca218, type: 3}
   popup: {fileID: 8300000, guid: cb1d9ef839e5f0d4ba673dd419c19290, type: 3}
   popupClose: {fileID: 8300000, guid: 6ca3219b4446b334fb74b7b535d86844, type: 3}
+  coins: {fileID: 8300000, guid: 50be77445ac299348939462d4ab0e781, type: 3}
   audioSourceBackground: {fileID: 6381069526673117561}
   audioSourceEffects: {fileID: 8540278373344982782}
 --- !u!82 &6381069526673117561

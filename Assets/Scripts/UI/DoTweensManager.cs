@@ -69,4 +69,14 @@ public class DoTweensManager
         rectTransform.transform.DOLocalMoveX(startPos.x, fadeTime).SetEase(Ease.OutElastic);
     }
 
+    public void FadeOutUp()
+    {
+        if(startPos == Vector3.zero)
+            startPos = rectTransform.transform.localPosition;
+        canvasGroup.alpha = 1f;
+        rectTransform.transform.localPosition = new Vector3(startPos.x, startPos.y - posY, startPos.z);
+        rectTransform.transform.DOLocalMoveY(startPos.y, fadeTime);
+        canvasGroup.DOFade(0f, fadeTime);
+    }
+
 }

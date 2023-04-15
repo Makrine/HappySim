@@ -4,12 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - LargeTile
-  - LevelChanger
-  - DangerousTile
   - ClothesShopKeeper1
-  - Menu
   - ClothesShopKeeper2
+  - UkePlayingArea
   layers:
   - Default
   - TransparentFX

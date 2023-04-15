@@ -14,7 +14,7 @@ public class AdjustSortingLayer : MonoBehaviour
 
     void Start()
     {
-        playerObject = GameObject.FindWithTag(playerTag);
+        playerObject = GameObject.FindGameObjectWithTag(playerTag);
         rendererComponent = GetComponent<Renderer>();
         sortingLayerName = rendererComponent.sortingLayerName;
     }

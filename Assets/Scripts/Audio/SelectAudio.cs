@@ -14,5 +14,6 @@ public class SelectAudio : MonoBehaviour
 public enum Audio
 {
     ButtonClick,
-    Popup
+    Popup,
+    Coins
 }
